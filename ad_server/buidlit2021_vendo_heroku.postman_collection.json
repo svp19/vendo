@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "2bf63dbd-2da9-4cdf-b2d7-98a9cd27a2bf",
+		"name": "buidlit2021_vendo_heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://decentads.herokuapp.com/api/health_status/",
+					"protocol": "http",
+					"host": [
+						"decentads",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"health_status",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload_ad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "Iq4Z86Sfx/1.png"
+						},
+						{
+							"key": "poster_address",
+							"value": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+							"type": "text"
+						},
+						{
+							"key": "max_token_budget",
+							"value": "190",
+							"type": "text"
+						},
+						{
+							"key": "redirect_url",
+							"value": "https://twitter.com/analyticaldosa",
+							"type": "text"
+						},
+						{
+							"key": "tag_lines",
+							"value": "DosaTime|AnalyticalWhat?|",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://decentads.herokuapp.com/api/upload/",
+					"protocol": "http",
+					"host": [
+						"decentads",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"upload",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serve_ad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://decentads.herokuapp.com/api/serve/",
+					"protocol": "http",
+					"host": [
+						"decentads",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"serve",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

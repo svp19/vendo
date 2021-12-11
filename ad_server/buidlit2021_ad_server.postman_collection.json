@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "72e6fd61-776b-49bc-b5cd-2a235a0a2c6a",
+		"name": "buidlit2021_ad_server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health_status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/health_status/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"health_status",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload_ad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "Basic Blue Instagram Post.jpg"
+						},
+						{
+							"key": "poster_address",
+							"value": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+							"type": "text"
+						},
+						{
+							"key": "max_token_budget",
+							"value": "190",
+							"type": "text"
+						},
+						{
+							"key": "redirect_url",
+							"value": "https://twitter.com/analyticaldosa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/upload/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"upload",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "serve_ad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/serve_ad/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"serve_ad",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "click_ad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/MQ==",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"MQ=="
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
