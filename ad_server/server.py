@@ -10,9 +10,15 @@ from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from base64 import urlsafe_b64encode as b64e, urlsafe_b64decode as b64d
 from make_captcha import image_captcha
+from web3 import Web3
+from eth_account.messages import encode_defunct
+
 
 # Load Environment Variables
 load_dotenv()
+
+# Connect to web3
+w3 = Web3(Web3.HTTPProvider(os.getenv('WEB3_PROVIDER')))
 
 # Setup Flask App
 app = Flask(__name__)
@@ -111,6 +117,7 @@ def submit():
             return render_template('success.html', integrator=data)
         return render_template('index.html', message='You have already signed up')
 
+
 @app.route('/api/serve/', methods=['GET'])
 @cross_origin()
 def serve_ad():    
@@ -133,15 +140,30 @@ def serve_ad():
     ad.pop('tag_lines', None)
     return jsonify(ad)
 
+
 @app.route('/api/verify/', methods=['GET'])
 def verify_captcha():    
     app.logger.info('verifying_captcha')
     public_id = request.args.get('public_id')
     passphrase = request.args.get('passphrase')
     captcha = db.session.query(Captcha).filter(Captcha.public_id == public_id).first()
-    # TODO token transfer
+    
+    # TODO sign message
+    msg = public_id
+    private_key = os.getenv('WEB3_PRIVATE_KEY')
+    message = encode_defunct(text=msg)
+    signed_message = w3.eth.account.sign_message(message, private_key=private_key)
+    signed_message.messageHash, signed_message.r, signed_message.s, signed_message.v, signed_message.signature
+
     if captcha and passphrase == captcha.passphrase:
-        return jsonify({'verified': 'true'})
+        return jsonify({
+            'verified': 'true',
+            'messageHash': str(signed_message.messageHash.hex()),
+            'r': hex(signed_message.r),
+            's': hex(signed_message.s),
+            'v': signed_message.v,
+            # 'signature': signed_message.signature
+        })
     return jsonify({'verified': 'false'})
 
 
@@ -193,11 +215,12 @@ def url_redirect():
         return redirect(ad.redirect_url)
     return jsonify({})
 
-# if __name__ == '__main__':
-#     db.create_all()
-#     status = db.session.commit()
-#     # app.run(host='0.0.0.0', port=3001, debug=True)
+# Local
+if __name__ == '__main__':
+    db.create_all()
+    status = db.session.commit()
+    app.run(host='0.0.0.0', port=3001, debug=True)
 
-
-db.create_all()
-status = db.session.commit()
+# Heroku
+# db.create_all()
+# status = db.session.commit()
