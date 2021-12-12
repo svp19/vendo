@@ -1,0 +1,9 @@
+# ninja log v5
+0	75	1639245351	CMakeFiles/keys.dir/keys.c.o	e570450ab8fe4c1e
+75	106	1639245351	/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/arm64-v8a/libkeys.so	4422d0dbeab807df
+0	10	0	clean	28b7a180d7c2661d
+1	403	1639286335	CMakeFiles/keys.dir/keys.c.o	e570450ab8fe4c1e
+403	465	1639286335	/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/arm64-v8a/libkeys.so	4422d0dbeab807df
+0	6	0	clean	28b7a180d7c2661d
+1	70	1639319860	CMakeFiles/keys.dir/keys.c.o	e570450ab8fe4c1e
+70	140	1639319860	/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/arm64-v8a/libkeys.so	4422d0dbeab807df

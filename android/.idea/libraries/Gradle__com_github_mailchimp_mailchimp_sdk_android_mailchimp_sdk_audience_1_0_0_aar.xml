@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.mailchimp.mailchimp-sdk-android:mailchimp-sdk-audience:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/674e727b4935cf55beeb3fe049fac5b6/transformed/jetified-mailchimp-sdk-audience-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/674e727b4935cf55beeb3fe049fac5b6/transformed/jetified-mailchimp-sdk-audience-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/674e727b4935cf55beeb3fe049fac5b6/transformed/jetified-mailchimp-sdk-audience-1.0.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.mailchimp.mailchimp-sdk-android/mailchimp-sdk-audience/1.0.0/e558cc0dd7c83dfd07639134eb25e0e1a867b6ba/mailchimp-sdk-audience-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

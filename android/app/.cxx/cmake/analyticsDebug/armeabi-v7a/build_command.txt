@@ -1,0 +1,25 @@
+                    Executable : /Users/sonusourav/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/Volumes/Secondary/alpha-wallet-android/app/src/main/cpp
+-DCMAKE_C_FLAGS=-DIFKEY=\""da3717f25f824cc1baa32d812386d93f"\"
+-DCMAKE_FIND_ROOT_PATH=/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/prefab/armeabi-v7a/prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_NDK=/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529
+-DANDROID_PLATFORM=android-23
+-DCMAKE_ANDROID_ARCH_ABI=armeabi-v7a
+-DCMAKE_ANDROID_NDK=/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/armeabi-v7a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/armeabi-v7a
+-DCMAKE_MAKE_PROGRAM=/Users/sonusourav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=23
+-B/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/armeabi-v7a
+-GNinja
+jvmArgs : 
+
+
+                    Build command args: []
+                    Version: 1

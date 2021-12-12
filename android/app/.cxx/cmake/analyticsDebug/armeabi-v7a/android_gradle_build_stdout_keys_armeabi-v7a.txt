@@ -1,0 +1,3 @@
+ninja: Entering directory `/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/armeabi-v7a'
+[1/2] Building C object CMakeFiles/keys.dir/keys.c.o
+[2/2] Linking C shared library /Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/armeabi-v7a/libkeys.so

@@ -1,0 +1,5 @@
+# ninja log v5
+1	37	0	clean	28b7a180d7c2661d
+1	23	0	clean	28b7a180d7c2661d
+0	126	1639319860	CMakeFiles/keys.dir/keys.c.o	837cedb9203c2bb2
+126	210	1639319860	/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/armeabi-v7a/libkeys.so	a6c25d2968875b65
