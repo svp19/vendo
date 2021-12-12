@@ -8,39 +8,39 @@ var web3 = new Web3(Web3.givenProvider || "https://rpc-mumbai.maticvigil.com/");
 
 async function getBalance() {
     if (typeof web3 !== 'undefined'){
-        web3.eth.getAccounts(async function(err, accounts){
-            myAccountAddress = accounts[3];
-            let balancePOLY = await web3.eth.getBalance(myAccountAddress);
-            balancePOLY = web3.utils.fromWei(balancePOLY);
-            balancePOLY = Math.round(balancePOLY * 100) / 100.0
-            document.getElementById('polygon-count').innerHTML = `${balancePOLY} ETH`
-            console.log('#Balance', balancePOLY)
-        })
+        await window.ethereum.enable();
+        // web3.eth.getAccounts(async function(err, accounts){
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        let myAccountAddress = accounts[0];
+        let balancePOLY = await web3.eth.getBalance(myAccountAddress);
+        balancePOLY = web3.utils.fromWei(balancePOLY);
+        balancePOLY = Math.round(balancePOLY * 100) / 100.0
+        document.getElementById('polygon-count').innerHTML = `${balancePOLY}`
+        console.log('#Balance', balancePOLY)
+        // })
     }
 }
 
 async function getTransactionsCount() {
     if (typeof web3 !== 'undefined'){
-        web3.eth.getAccounts(async function(err, accounts){
-            myAccountAddress = accounts[3];
-            let transactionsCount = await web3.eth.getTransactionCount(myAccountAddress);
-            document.getElementById('impression-count').innerHTML = transactionsCount
-            console.log("#Impressions", transactionsCount);
-        })
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        let myAccountAddress = accounts[0];
+        let transactionsCount = await web3.eth.getTransactionCount(myAccountAddress);
+        document.getElementById('impression-count').innerHTML = transactionsCount
+        console.log("#Impressions", transactionsCount);
     }
 }
 
 async function getBalanceTokens() {
     if (typeof web3 !== 'undefined'){
-        web3.eth.getAccounts(async function(err, accounts){
-            myAccountAddress = accounts[3];
-            var myContract = new web3.eth.Contract(arrayABI, mainContractAddress, {
-                from: myAccountAddress,
-            });
-            let balanceTokens = await myContract.methods.balanceOf(myAccountAddress).call();
-            document.getElementById('token-count').innerHTML = `${balanceTokens} VND`
-            console.log('#Tokens', balanceTokens)
-        })
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        let myAccountAddress = accounts[0];
+        var myContract = new web3.eth.Contract(arrayABI, mainContractAddress, {
+            from: myAccountAddress,
+        });
+        let balanceTokens = await myContract.methods.balanceOf(myAccountAddress).call();
+        document.getElementById('token-count').innerHTML = `${balanceTokens} VND`
+        console.log('#Tokens', balanceTokens)
     }
 }
 
