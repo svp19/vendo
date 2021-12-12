@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Volumes/Secondary/alpha-wallet-android/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/sonusourav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/sonusourav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "keys-Debug-x86_64": {
+      "buildCommandComponents": [
+        "/Users/sonusourav/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64",
+        "keys"
+      ],
+      "buildType": "debug",
+      "abi": "x86_64",
+      "artifactName": "keys",
+      "output": "/Volumes/Secondary/alpha-wallet-android/app/build/intermediates/cmake/analyticsDebug/obj/x86_64/libkeys.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

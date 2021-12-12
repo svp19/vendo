@@ -1,0 +1,3 @@
+/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64/CMakeFiles/rebuild_cache.dir
+/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64/CMakeFiles/edit_cache.dir
+/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64/CMakeFiles/keys.dir

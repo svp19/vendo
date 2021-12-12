@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Volumes/Secondary/alpha-wallet-android/app/.cxx/cmake/analyticsDebug/x86_64",
+  "command": "/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=x86_64-none-linux-android23 --gcc-toolchain=/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/sonusourav/Library/Android/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dkeys_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -DIFKEY=\\\"\"da3717f25f824cc1baa32d812386d93f\"\\\" -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/keys.dir/keys.c.o   -c /Volumes/Secondary/alpha-wallet-android/app/src/main/cpp/keys.c",
+  "file": "/Volumes/Secondary/alpha-wallet-android/app/src/main/cpp/keys.c"
+}
+]
