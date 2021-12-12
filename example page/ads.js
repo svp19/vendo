@@ -84,4 +84,18 @@ async function getBalance() {
     }
 }
 
+async function getBalanceTokens() {
+    if (typeof web3 !== 'undefined'){
+        web3.eth.getAccounts(async function(err, accounts){
+            myAccountAddress = accounts[3];
+            var myContract = new web3.eth.Contract(arrayABI, mainContractAddress, {
+                from: myAccountAddress,
+            });
+            let balanceTokens = await myContract.methods.balanceOf(myAccountAddress).call();
+            console.log("VND", balanceTokens);
+        })
+    }
+}
+
 getBalance();
+getBalanceTokens();
