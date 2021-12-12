@@ -21,7 +21,7 @@ print()
 signed_message = w3.eth.account.sign_message(message, private_key=private_key)
 print(signed_message.messageHash, signed_message.r, signed_message.s, signed_message.v, signed_message.signature)
 
-# with open("../abis/vondo.json", "r") as f:
+# with open("../abis/vendo.json", "r") as f:
 #     abi = f.read()
 
 # contract_addr="0x646bf517bc3504Fb0a6BC128C8EcbcA54E8cDC67"

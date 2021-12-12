@@ -11,28 +11,40 @@ contract Token is ERC20 {
   mapping(bytes32 => bool) public impressionIds;
 
   // Constructor to initialize the address of the deployer
-  constructor() payable ERC20("ZCoin", "ZC") {
+  constructor() payable ERC20("vendo", "ven") {
     vendo = msg.sender;
   }
 
   // Errors
   error impressionAlreadyViewed(bytes32 impressionId);
-
-  function mint() public payable {
-    // For every polygon, generate 100 tokens
-    uint amount = msg.value * 300;
-  
-    // Mint token into the add posters address
-		_mint(msg.sender, amount);
-	}
+  error failedToRedeem(address redeemer);
+  error insuffucuantFundsSent(uint256 amount);
 
   // Function to post an ad
   function postAd(string memory adId) external payable {
     // Accept Polygon and mint tokens
-    mint();
+    // For every polygon, generate 30000 tokens
+    uint tokens = msg.value * 3333 / (1 ether);
+    if (tokens == 0) {
+      revert insuffucuantFundsSent(msg.value);
+    }
+  
+    // Mint token into the add posters address
+		_mint(msg.sender, tokens);
 
     // Add advertisement
     postings[adId] = msg.sender;
+  }
+
+  function redeem(uint256 tokens) external payable {
+    // Transfer tokens to vendo wallet
+    transfer(vendo, tokens);
+
+    // Transfer polygons to the redeemer
+    uint amount = tokens * (1 ether) / 3333;
+    if (!payable(msg.sender).send(amount)) {
+      revert failedToRedeem(msg.sender);
+    }
   }
 
   function onClick(string memory adId, bytes32 hashMessage, uint8 v,
