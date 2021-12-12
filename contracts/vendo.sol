@@ -6,8 +6,12 @@ pragma solidity >=0.7.0 <0.9.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Token is ERC20 {
+  struct Postings {
+    address posterAddress;
+    uint256 impressions;
+  }
   address public vendo;    
-  mapping(string => address) public postings;
+  mapping(string => Postings) public postings;
   mapping(bytes32 => bool) public impressionIds;
 
   // Constructor to initialize the address of the deployer
@@ -33,7 +37,10 @@ contract Token is ERC20 {
 		_mint(msg.sender, tokens);
 
     // Add advertisement
-    postings[adId] = msg.sender;
+    postings[adId] = Postings({
+      posterAddress: msg.sender,
+      impressions: 0
+    });
   }
 
   function redeem(uint256 tokens) external payable {
@@ -60,11 +67,12 @@ contract Token is ERC20 {
     // Update impressionId map to true
     impressionIds[hashMessage] = true;
 
-    address adPoster = postings[adId];
+    address adPoster = postings[adId].posterAddress;
 
     // Transfer tokens to integrator, viewer and the smartContract deployer
     _transfer(adPoster, integrator, 7);
     _transfer(adPoster, msg.sender, 1);
     _transfer(adPoster, vendo, 2);
+    postings[adId].impressions += 1;
   }
 }
