@@ -2,7 +2,11 @@
 ![vendo banner with tagline](vendo_banner_tagline.png "vendo banner with tagline")
 
 # Decentralized Ads - 
-## Goodbye to AdBlocker; Earn Tokens for Watching Ads!
+
+
+### Tagline - 
+
+> Decentralized Ads - Authentic traffic for advertisers, Profitable ad-viewing for web-surfers
 
 
 ### Integrating Vendo into your Website is as easy as -
