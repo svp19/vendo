@@ -63,7 +63,7 @@ contract Token is ERC20 {
     address adPoster = postings[adId];
 
     // Transfer tokens to integrator, viewer and the smartContract deployer
-    _transfer(adPoster, integrator, 2);
+    _transfer(adPoster, integrator, 7);
     _transfer(adPoster, msg.sender, 1);
     _transfer(adPoster, vendo, 2);
   }
