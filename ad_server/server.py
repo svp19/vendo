@@ -55,6 +55,7 @@ class AdCampaign(db.Model):
             # 'created_at': self.created_at,
             'image_url': self.image_url,
             # 'redirect_url': self.redirect_url,
+            'ad_campaign': b64e(str(self.id).encode()).decode(),
             'ad_url': os.getenv('SERVER_URL') + 'click?ad_campaign=' + b64e(str(self.id).encode()).decode(),
             'tag_lines': self.tag_lines
         }
@@ -126,7 +127,8 @@ def serve_ad():
     if ad is None:
         return
     ad = ad.serialize()
-    tag_line = random.choice(ad["tag_lines"].split('|')) 
+    tag_line = random.choice(ad["tag_lines"].split('|'))
+    tag_line += str(random.randint(1000,9999))
     img_captcha = image_captcha.generate(tag_line)
     folder = os.getenv('CLOUD_FOLDER') + '/captchas'
     result = cloudinary.uploader.upload(img_captcha, folder=folder)
@@ -189,6 +191,7 @@ def upload_ad_campaign():
             db.session.add(data)
             db.session.commit()
             app.logger.info('committed_to_db__%s', data.id)
+            result["ad_id"] = b64e(str(data.id).encode()).decode()
     return jsonify(result)
 
 
