@@ -5,10 +5,17 @@ var web3 = new Web3(Web3.givenProvider || "https://rpc-mumbai.maticvigil.com/");
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 async function postAd() {
-    alert('Success');
     if (typeof web3 !== 'undefined'){
-        await delay(2000);
+        await delay(2500);
         alert('Success');
+        const response = await fetch('http://decentads.herokuapp.com/api/serve/', {
+            method: 'GET',
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        });
+        const adJSON = await response.json();
+        console.log(adJSON);
         await window.ethereum.enable();
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
         let myAccountAddress = accounts[0];
@@ -16,7 +23,7 @@ async function postAd() {
             from: myAccountAddress,
 
         });
-        myContract.methods.postAd("MTg=").send({
+        myContract.methods.postAd(adJSON["ad_campaign"]).send({
             from: myAccountAddress,
             value: 1000000000000000000,
         }).then(
@@ -27,16 +34,6 @@ async function postAd() {
     }
 }
 
-document.querySelector('#fileUpload').addEventListener('change', event => {
-    handleImageUpload(event)
-})
-var globalFile;
-const handleImageUpload = event => {
-    const files = event.target.files
-    globalFile = files[0];
-    const formData = new FormData()
-    formData.append('myFile', files[0])
-}
 
 
 

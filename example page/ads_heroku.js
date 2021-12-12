@@ -25,7 +25,8 @@ async function verifyCaptcha() {
             var myContract = new web3.eth.Contract(arrayABI, mainContractAddress, {
                 from: myAccountAddress,
             });
-            var integrator_address = "0x1F195dd12680Df678Ace0C9a02Ca0c6331A4B0B3";
+            // var integrator_address = "0x1F195dd12680Df678Ace0C9a02Ca0c6331A4B0B3";
+            var integrator_address = "0xd7F20f15aA2E39bDB21c4B80845462B7E842F7c7";
             // console.log(myAccountAddress);
             console.log("FunnyNew", adId, 
                 responseJSON["messageHash"],

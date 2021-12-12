@@ -39,7 +39,7 @@ async function getBalanceTokens() {
             from: myAccountAddress,
         });
         let balanceTokens = await myContract.methods.balanceOf(myAccountAddress).call();
-        document.getElementById('token-count').innerHTML = `${balanceTokens} VND`
+        document.getElementById('token-count').innerHTML = `${balanceTokens} VEN`
         console.log('#Tokens', balanceTokens)
     }
 }
