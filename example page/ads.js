@@ -97,5 +97,16 @@ async function getBalanceTokens() {
     }
 }
 
+async function getTransactionsCount() {
+    if (typeof web3 !== 'undefined'){
+        web3.eth.getAccounts(async function(err, accounts){
+            myAccountAddress = accounts[3];
+            let transactionsCount = await web3.eth.getTransactionCount(myAccountAddress);
+            console.log("#Impressions", transactionsCount);
+        })
+    }
+}
+
 getBalance();
 getBalanceTokens();
+getTransactionsCount();
